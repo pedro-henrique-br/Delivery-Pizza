@@ -32,6 +32,11 @@
       <div>
         <button type="submit" class="flex w-full justify-center rounded-md bg-[#FF6200] px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-[#FF6900] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
       </div>
+      <div class='mb-6 text-center'>
+        <p class='rounded-md bg-red-50 p-4 text-sm font-semibold text-red-700'>
+        <?= htmlspecialchars($_SESSION["errors"] ?? null )?>
+        </p>
+      </div>
     </form>
 
     <p class="mt-10 text-center text-sm/6 text-gray-500">

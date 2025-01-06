@@ -21,11 +21,14 @@ class AuthController
       case "/login":
         $this->login();
         break;
-      case "/logout":
-        $this->logout();
+      case "/user/home":
+        include '../app/views/client/auth/home.php';
         break;
-      case "/user":
-        $this->showUser();
+      case "/user/settings":
+        include '../app/views/client/auth/settings.php';
+        break;
+      case "/client/logout":
+        $this->logout();
         break;
     }
   }
@@ -48,24 +51,21 @@ class AuthController
         session_regenerate_id(true);
         $_SESSION["id"] = $user["id"];
         $_SESSION["email"] = $user["email"];
-          header("Location: /user");
-    }
-    } else {
-        // (new \Core\Session)->put("errors", "Usuário sem permissão");
+        header("Location: /user/home");
+      } else {
+        (new \Core\Session)->put("errors", "Usuário não encontrado");
       }
+    }
     require_once '../app/views/client/login.php';
-  }
-  public static function showUser()
-  {
-    session_start();
-    require_once '../app/views/client/user.php';
   }
   public static function logout()
   {
-    session_start();
-    session_destroy();
-    require_once '../App/views/destroy.php';
-    die();
+    if($_SERVER["REQUEST_METHOD"] === "GET"){
+      session_start();
+      session_destroy();
+      require '../app/views/destroy.php';
+      die();
+    }
   }
 }
 

@@ -1,7 +1,3 @@
-<?php 
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +26,12 @@
     </nav>
 
     <div class="p-4">
-      <a href="/logout" class="flex items-center px-4 py-2 text-white hover:text-gray-300 logout">
-        <i class="fas fa-sign-out-alt mr-3"></i> Logout
-       </a>
-    </div>
+    <form method="POST">
+        <input type="text" value="DELETE" hidden>
+        <a href="/logout" class="flex items-center px-4 py-2 text-white hover:text-gray-300 logout">
+          <i class="fas fa-sign-out-alt mr-3"></i> Logout
+         </a>
+      </form>
   </div>
 
   </div>

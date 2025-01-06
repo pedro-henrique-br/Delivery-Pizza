@@ -48,14 +48,9 @@
           </div>
           <div class="button-container pt-2">
             <form method="post">
-              <input name="id" type="text" hidden value="<?php $product["id"] ?>">
+              <input name="id" type="text" hidden value=<?= htmlspecialchars($product['id']) ?>>
               <button type="submit" class="flex w-1/4 justify-center rounded-md bg-[#FF6200] px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-[#FF6900] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Adicionar</button>
             </form>
-            <?php 
-              if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["id"])){
-                echo $_POST["id"];
-              }
-            ?>
           </div>
           </div>
         <?php endforeach; ?>

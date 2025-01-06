@@ -10,6 +10,7 @@ class Middleware {
   ];
 
   public static function resolve($key){
+    session_start();
     if(!$key){
       return;
     }

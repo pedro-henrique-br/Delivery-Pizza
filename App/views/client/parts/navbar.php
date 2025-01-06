@@ -50,7 +50,7 @@
             <a href="/about" class="rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Sobre nós</a>
           </div>
           <div class="py-6 flex gap-x-2">
-            <a href="/cart"><img class="h-7 w-auto" src="assets/images/cart.png" alt="carrinho" /></a>
+            <a href="/user/cart"><img class="h-7 w-auto" src="assets/images/cart.png" alt="carrinho" /></a>
             <a href="/login"><img class="h-7 w-auto" src="assets/images/user.png" alt="Usuario" /></a>
           </div>
         </div>

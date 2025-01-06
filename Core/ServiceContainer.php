@@ -22,15 +22,15 @@
 $container = new ServiceContainer();
 
 $container->register('userModel', function () {
-    return new \Models\User();
+    return new App\Models\User();
 });
 
 $container->register('productsModel', function () {
-    return new \Models\Products();
+    return new App\Models\Products();
 });
 
 $container->register('orderModel', function () {
-    return new \Models\Order();
+    return new App\Models\Order();
 });
 
 $container->register('authController', function ($container) {
@@ -52,7 +52,6 @@ $container->register('oderController', function ($container) {
 });
 
 $container->register('productsController', function ($container) {
-    require_once 'functions.php';
     return new \App\Controllers\ProductsController(
       $container->get('productsModel'),
     );
