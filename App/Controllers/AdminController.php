@@ -45,6 +45,7 @@ class AdminController
         session_regenerate_id(true);
         $_SESSION["id"] = $user["id"];
         $_SESSION["email"] = $user["email"];
+        (new \Core\Middleware\CsrfMiddleware)->generate();
         if ($user["role"] === "admin") {
           header("Location: /admin/home");
         } else {

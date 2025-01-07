@@ -51,6 +51,7 @@ class AuthController
         session_regenerate_id(true);
         $_SESSION["id"] = $user["id"];
         $_SESSION["email"] = $user["email"];
+        (new \Core\Middleware\CsrfMiddleware)->generate();
         header("Location: /user/home");
       } else {
         (new \Core\Session)->put("errors", "Usuário não encontrado");

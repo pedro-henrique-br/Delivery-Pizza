@@ -7,6 +7,7 @@ class Middleware {
     "guest" => Guest::class,
     "auth" => Auth::class,
     "admin" => Admin::class,
+    "notAuth" => NotAuth::class,
   ];
 
   public static function resolve($key){

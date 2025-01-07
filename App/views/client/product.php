@@ -11,7 +11,6 @@
   <?php require 'parts/navbar.php' ?>
 
   <main style="height: 90vh;" class="flex flex-col items-center justify-start mt-24">
-
     <form method="get" class="w-full max-w-lg">
       <div>
         <label for="menu" class="block text-md font-semibold text-gray-900">
@@ -28,8 +27,8 @@
       </button>
     </form>
 
-    <div id="product" class="mt-10 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 overflow-y-auto flex align-center justify-center">
-      <div class="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+    <div id="product-list" class="mt-10 mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 overflow-y-auto">
+    <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         <?php if ($product) : ?>
           <div>
           <div class="group relative">
@@ -65,9 +64,7 @@
       </div>
     <?php endif ?>
   </main>
-
-
   <?php require 'parts/footer.php' ?>
-</body>
 
+</body>
 </html>

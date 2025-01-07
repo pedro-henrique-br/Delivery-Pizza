@@ -63,6 +63,7 @@ class ProductsController {
     }
 
     public function createProduct() {
+        (new \Core\Middleware\CsrfMiddleware)->validate();
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $name = $this->sanitizeInput("name", INPUT_POST);
             $description = $this->sanitizeInput("description", INPUT_POST);

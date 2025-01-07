@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Products;
 
 require_once __DIR__ . '../../../Core/ServiceContainer.php';
 
@@ -15,6 +16,9 @@ class OrderController {
       case "/user/orders":
         $this->getUserOrders();
         break;
+      case "/user/order":
+        $this->newOrder();
+        break;
       case "/user/cart":
         $this->getUserCart();
         break;
@@ -26,11 +30,16 @@ class OrderController {
   }
 
   public static function newOrder () {
-    if($_SERVER["REQUEST_METHOD"] === "POST"){
-      echo $_POST["id"];
+    if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["product_id"])){
+      $orderId = $_POST["product_id"];
+      $product = (new Products())->getProduct("id", "i", $orderId);
+      require '../app/views/client/auth/newOrder.php';
     }
   }
 
+  public function getUsersOrders () {
+    require '../app/views/client/auth/orders.php';
+  }
   public function getUserOrders () {
     require '../app/views/client/auth/orders.php';
   }
