@@ -24,7 +24,7 @@
         <a href="/" class="rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Início</a>
         <a href="/menu" class="rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Menu</a>
         <a href="/about" class="rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Sobre nós</a>
-        <a href="/cart"><img class="h-7 w-auto" src="assets/images/cart.png" alt="carrinho" /></a>
+        <a href="/user/cart"><img class="h-7 w-auto" src="assets/images/cart.png" alt="carrinho" /></a>
         <a href="/login"><img class="h-7 w-auto" src="assets/images/user.png" alt="Usuario" /></a>
       </div>
     </nav>

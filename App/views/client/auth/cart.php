@@ -17,10 +17,9 @@
     <main class="p-6">
       <h1 class="text-2xl font-bold text-gray-600">
         Cart
-        <?php foreach ($_SESSION["cart"] as $product): ?>
-          <?php echo htmlspecialchars($product); ?>
-          <?php echo htmlspecialchars($product["quantity"]); ?>
-        <?php endforeach ?>
+        <?php 
+        print_r((new \Core\Functions)->getCart());
+        ?>
       </h1>
     </main>
   </div>

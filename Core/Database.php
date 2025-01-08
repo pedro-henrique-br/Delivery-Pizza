@@ -30,6 +30,7 @@ class Database {
     }
     $queryPrepare->execute();
     $queryResult = $queryPrepare->get_result();
+    $this->connection->close();
     if(str_contains($query, "SELECT")){
       $result = [];
       foreach($queryResult as $row){

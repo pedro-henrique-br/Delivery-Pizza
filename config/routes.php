@@ -7,8 +7,7 @@ $router->get("/", "../app/views/client/home.php")->only("guest");
 $router->get("/login", '../app/controllers/AuthController.php')->only("notAuth");
 $router->post("/login", '../app/controllers/AuthController.php')->only("notAuth");
 $router->get("/menu", '../app/controllers/ProductsController.php')->only("guest");
-$router->post("/menu", '../app/controllers/OrderController.php')->only("auth");
-$router->post("/", '../app/controllers/OrderController.php')->only("auth");
+$router->post("/menu", '../app/controllers/ProductsController.php')->only("auth");
 
 // auth
 $router->get("/user/home", '../app/controllers/AuthController.php')->only("auth");
